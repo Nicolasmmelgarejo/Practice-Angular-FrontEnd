@@ -1,0 +1,10 @@
+@import '~ngx-toastr/toastr.css';
+@import "~font-awesome/css/font-awesome.min.css";
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+

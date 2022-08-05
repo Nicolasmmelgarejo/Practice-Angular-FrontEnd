@@ -1,0 +1,54 @@
+<form [formGroup]="form" (ngSubmit)="addObject()">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="ObjectName"  placeholder="Nombre">
+        </div>
+    </div>
+    <h1></h1>
+    <div class="form-group">
+        <div class="input-group">
+            <select class="form-control form-select" formControlName="ObjectType" id="ObjectType">
+                <option selected value="">Elegir Tipo de Objeto</option>
+                <option value="producto">Producto</option>
+                <option value="suministro">Suministro</option>
+                <option value="material">Material</option>
+            </select>
+        </div>
+    </div>
+    <h1></h1>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="ObjectDeposit" placeholder="Deposito">
+        </div>
+    </div>
+    <h1></h1>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="ObjectAisle" placeholder="Pasillo">
+        </div>
+    </div>
+    <h1></h1>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="ObjectShelf" placeholder="Estanteria">
+        </div>
+    </div>
+    <h1></h1>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="ObjectFloor" placeholder="Piso">
+        </div>
+    </div>
+    <h1></h1>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="ObjectStock" placeholder="Stock">
+        </div>
+    </div>
+    <h1></h1>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" [disabled]="form.invalid" type="submit">Agregar</button>
+    </div>
+    <h1></h1>
+</form>
+

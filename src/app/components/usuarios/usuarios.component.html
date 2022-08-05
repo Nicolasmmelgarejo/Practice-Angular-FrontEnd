@@ -1,0 +1,51 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <div style="height: 5rem; border-width: 1px 0;"></div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre de Usuario</th>
+                <th>Contraseña</th>
+                <th>Rol del Usuario</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Users of userList">
+                <td>
+                    <input type="text" value="{{Users.userName}}" disabled>                
+                </td>
+                <td>
+                    <input type="password" value="{{Users.userPassword}}" disabled>                
+                </td>
+                <td class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Rol
+                    </a>
+                    <ul class="dropdown-menu" *ngFor="let rol of Users.user_Roles">
+                      <li class="nav-item">
+                        <a>{{rol.userRole}}</a>
+                      </li>
+                    </ul>
+                </td>
+                <td>
+                    <a class="nav-link" role="button" (click)="editUser(Users)">
+                        <button type="button" class="btn btn-default btn-info"><span class="fa fa-pencil-square-o" aria-hidden="true"></span></button>
+                    </a>
+                </td>
+                <td>
+                    <a class="nav-link" role="button"  (click)="deleteUser(Users.id!)">
+                        <button type="button" class="btn btn-danger"><span class="fa fa-trash-o" aria-hidden="true"></span></button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<a class="nav-link" role="button">
+    <button  (click)="crearU()" class="btn btn-lg btn-primary btn-block" type="submit"><span class="fa fa-id-card"></span> Agregar Usuario</button>
+</a>

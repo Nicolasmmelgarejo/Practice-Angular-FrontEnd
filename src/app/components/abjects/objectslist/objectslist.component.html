@@ -1,0 +1,41 @@
+<table class="table">
+    <thead class="text-center">
+        <tr >
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Deposito</th>
+            <th scope="col">Pasillo</th>
+            <th scope="col">Estanteria</th>
+            <th scope="col">Piso</th>
+            <th scope="col">Stock</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let Objects of objectsService.list"> 
+            <td>{{Objects.objectName}}</td>
+            <td>{{Objects.objectType}}</td>
+            <td>{{Objects.objectDeposit}}</td>
+            <td>{{Objects.objectAisle}}</td>
+            <td>{{Objects.objectFloor}}</td>
+            <td>{{Objects.objectShelf}}</td>
+            <td>{{Objects.objectStock}}</td>
+            <td>
+                <button type="button" class="btn btn-default" *ngIf="user.user_Roles![0].userRole == 'admin'"  (click)="editObject(Objects)">
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </button>   
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" *ngIf="user.user_Roles![0].userRole == 'admin'" (click)="deleteObject(Objects.id)">
+                    <span class="material-symbols-outlined text-black">
+                        delete
+                    </span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>

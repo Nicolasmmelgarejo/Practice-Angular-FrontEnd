@@ -1,0 +1,52 @@
+<div class="container p-2">
+    <form [formGroup]="form" (ngSubmit)="addUser()" class="border border-dark">
+        <div class="row g-0">
+            <div class="col text-center p-2 mb-3 bg-light">
+                <span class="fs-3">Registrar Usuario</span>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col">
+                <label for="UserName" class="form-label">Nombre de Usuario</label>
+                <input type="text" class="form-control"  name="User" id="UserName" 
+                formControlName="Nombre_User">
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col mb-3">
+                <label for="pwd" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="pwd"
+                formControlName="pwd">
+            </div>
+            <div class="col mb-3">
+                <label for="rpwd" class="form-label">Repetir Contraseña</label>
+                <input type="password" class="form-control" id="rpwd"
+                formControlName="rpwd">
+            </div>
+        </div>
+        <div class="row p-4">
+            <div class="form-check col form-check-inline col">
+                <input class="form-check-input" type="radio" id="admin" value="admin"
+                formControlName="User_Roles">
+                <label class="form-check-label" for="admin">Admin</label>
+            </div>
+            <div class="form-check col form-check-inline col">
+                <input class="form-check-input" type="radio" id="normal" value="normal"
+                formControlName="User_Roles">
+                <label class="form-check-label" for="normal">Normal</label>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary" (click)='verU()'>Cancelar</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-grid">
+                    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

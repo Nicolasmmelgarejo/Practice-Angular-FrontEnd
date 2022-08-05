@@ -1,0 +1,18 @@
+form{
+    width:500px;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input.ng-touched.ng-invalid{
+    border-color: #dc3545
+}
+input.ng-valid{
+    border-color: #28a745;
+}
+#toast-container > div {
+    opacity:1;
+}

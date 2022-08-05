@@ -1,0 +1,31 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="logIn()" class="border p-3 rounded-3">
+        <div class="row g-0">
+            <div class="col text-center p-2 mb-3 bg-light">
+                <span class="fs-3">Ingresar</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="user" class="form-label">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="user"
+                formControlName="user">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="pwd" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="pwd"
+                formControlName="pwd">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="d-grid">
+                    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
